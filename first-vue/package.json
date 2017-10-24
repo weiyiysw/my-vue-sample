@@ -13,7 +13,9 @@
   "dependencies": {
     "element-ui": "^2.0.0-alpha.2",
     "highlight.js": "^9.12.0",
+    "js-beautify": "^1.7.4",
     "vue": "^2.4.2",
+    "vue-highlight.js": "^2.1.0",
     "vue-highlightjs": "^1.3.3",
     "vue-router": "^2.7.0"
   },

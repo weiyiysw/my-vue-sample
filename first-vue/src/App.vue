@@ -8,6 +8,16 @@
       <el-container>
         <el-header>Header</el-header>
         <el-main>
+          <div>
+            <el-breadcrumb separator-class="el-icon-arrow-right">
+              <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+              <el-breadcrumb-item
+                v-for="item in $route.matched"
+                v-if="item.path != '/'"
+                :to="item.path"
+                :key="item.path">{{item.meta.name}}</el-breadcrumb-item>
+            </el-breadcrumb>
+          </div>
           <router-view></router-view>
         </el-main>
         <el-footer>Footer</el-footer>

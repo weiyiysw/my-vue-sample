@@ -16,19 +16,19 @@
   <div>
     <el-table :data="userInfos" border stripe>
       <el-table-column prop="user" label="用户名">
-        <template scope="scope">
+        <template slot-scope="scope">
             <el-input v-if="scope.row.isEdit" size="small" v-model="scope.row.user"></el-input>
             <span v-else>{{scope.row.user}}</span>
           </template>
       </el-table-column>
       <el-table-column prop="age" label="年龄">
-        <template scope="scope">
+        <template slot-scope="scope">
             <el-input v-if="scope.row.isEdit" size="small" v-model="scope.row.age"></el-input>
             <span v-else>{{scope.row.age}}</span>
           </template>
       </el-table-column>
       <el-table-column label="操作" align="center">
-        <template scope="scope">
+        <template slot-scope="scope">
           <template v-if="!scope.row.isEdit">
             <el-button size="small" icon="el-icon-edit" type="primary" @click="handleEdit(scope.$index, scope.row)"></el-button>
             <el-button size="small" icon="el-icon-delete" type="danger" @click="handleDelete(scope.$index, scope.row)"></el-button>
@@ -58,7 +58,6 @@ export default {
   },
   methods: {
     checkEdit(row, column) {
-      console.log('cell click')
       row.isEdit = true
     },
     handleEdit(index, row) {
@@ -79,6 +78,7 @@ export default {
       row.isEdit = false
     },
     addUserInfo() {
+      console.log(this.$route.matched)
       if (this.userInfo.user !== null && this.userInfo.age !== null) {
         // let newuser = this.test(this.userInfo)
         let newuser = this.add()

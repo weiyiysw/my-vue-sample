@@ -17,6 +17,14 @@
       <i class="el-icon-menu"></i>
       <span slot="title">组件通信</span>
     </el-menu-item>
+    <el-menu-item index="/highlightCode">
+      <i class="el-icon-menu"></i>
+      <span slot="title">高亮代码测试</span>
+    </el-menu-item>
+    <el-menu-item index="/beautifyCode">
+      <i class="el-icon-menu"></i>
+      <span slot="title">格式化代码测试</span>
+    </el-menu-item>
   </el-menu>
 </div>
 </template>
